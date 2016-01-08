@@ -23,10 +23,12 @@ is the length of the result?
 Your puzzle input is 1113122113.
 )
 
+input=: '1113122113'
+
 las_numeric=: ,@((# , {.);.1~ 1 , 2 ~:/\ ])&.(10x&#.inv)@]^:(1+i.@[)
 las=: ([: , (1 , 2 ~:/\ i.~)@] (":@# , {.);.1 ])^:[
 
-echo # 40 las '1113122113'
+echo 'Day10 Part1: ',": # 40 las input
 
 Note 'Part 2'
 Neat, right? You might also enjoy hearing John Conway talking about this 
@@ -35,4 +37,4 @@ sequence (that's Conway of Conway's Game of Life fame).
 Now, starting again with the digits in your puzzle input, 
 apply this process 50 times. What is the length of the new result?
 )
-echo # 50 las '1113122113'
+echo 'Day10 Part2: ',": # 50 las input

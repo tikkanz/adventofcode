@@ -6,8 +6,8 @@ It is common in many programming languages to provide a way to escape special
 characters in strings. For example, C, JavaScript, Perl, Python, and even PHP handle 
 special characters in very similar ways.
 
-However, it is important to realize the difference between the number of characters in 
-the code representation of the string literal and the number of characters in the 
+However, it is important to realize the difference between the number of characters 
+in the code representation of the string literal and the number of characters in the 
 in-memory string itself.
 
 For example:
@@ -42,9 +42,9 @@ tst=: <;._2 noun define
 "\x27"
 )
 
-input=: 'b' freads '~temp/advent8_input.txt'
+input=: 'b' freads '~Proj/adventofcode/advent8_input.txt'
 
--/ +/ (#, [: # ('\\x[0123456789abcdefg]{2}';'"') rxrplc ('\\"';'"') rxrplc ('\\\\';'"') rxrplc }.@}:)&>  input
+echo 'Day8 Part1: ',": -/ +/ (#, [: # ('\\x[0123456789abcdefg]{2}';'"') rxrplc ('\\"';'"') rxrplc ('\\\\';'"') rxrplc }.@}:)&>  input
 
 Note 'Part 2'
 Now, let's go the other way. In addition to finding the number of characters of code, 
@@ -65,4 +65,4 @@ string literal. For example, for the strings above, the total encoded length
 (23, just like in the first part of this puzzle) is 42 - 23 = 19.
 )
 
--/ +/ (# ,~ [: # [: ('"' , ,&'"') ('\\';'^^') rxrplc ('"';'^"') rxrplc ])&>  input
+echo 'Day8 Part1: ',": -/ +/ (# ,~ [: # [: ('"' , ,&'"') ('\\';'^^') rxrplc ('"';'^"') rxrplc ])&>  input

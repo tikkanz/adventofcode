@@ -62,13 +62,13 @@ David would lose 7 happiness units by sitting next to Bob.
 David would gain 41 happiness units by sitting next to Carol.
 )
 
-input=: freads '~temp/advent13_input.txt'
+input=: freads '~Proj/adventofcode/advent13_input.txt'
 parseInput=: 0 9 2 {"1 [: ;:;._2  rplc&('.';'';'gain ';'';'lose ';'_')
 makeValTable=: (_99 ". [: > {:"1) [`(<"1@])`(8 8$0:"_)} ~.@:({."1) i. 2&{."1
 getAllPerms=: (>:@{:@$ (2 <\ $)"1 i.@!@# A. i.@#)
 getVals=: (|:@[ {~ ]) + {~
 
-echo >./ +/"1 (makeValTable getVals [: getAllPerms ~.@:({."1) ) parseInput input
+echo 'Day 13 Part1: ',":  >./ +/"1 (makeValTable getVals [: getAllPerms ~.@:({."1) ) parseInput input
 
 
 Note 'Part 2'
@@ -92,4 +92,4 @@ At this point, you should return to your advent calendar and try another puzzle.
 
 
 getAllPerms=: ((2 + {:@$) (2 <\ $)"1 i.@!@# A. i.@>:@#)
-echo >./ +/"1 ( (9 9 {. makeValTable) getVals [: getAllPerms ~.@:({."1) ) parseInput input
+echo 'Day 13 Part2: ',":  >./ +/"1 ( (9 9 {. makeValTable) getVals [: getAllPerms ~.@:({."1) ) parseInput input

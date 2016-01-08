@@ -20,8 +20,8 @@ You will not encounter any strings containing numbers.
 What is the sum of all numbers in the document?
 )
 
-input=: }: freads '~temp/advent12_input.txt'
-echo +/ _99 ". ', ' rplc~ '[]{}"abcdefghijklmnopqrstuvwxyz:' -.~ input
+input=: }: freads '~Proj/adventofcode/advent12_input.txt'
+echo 'Day12 Part1: ',":  +/ _99 ". ', ' rplc~ '[]{}"abcdefghijklmnopqrstuvwxyz:' -.~ input
 
 Note 'Part 2'
 Uh oh - the Accounting-Elves have realized that they double-counted 
@@ -40,21 +40,42 @@ with the value "red". Do this only for objects ({...}), not arrays
       effect.
 )
 
-load 'convert/json'
-isObject=: # *./&(2&=) #@$
-isRed=: (<'red')&e.@{:
+tst1=: '[1,2,3]'
+tst2=: '[1,{"c":"red","b":2},3]'
+tst3=: '{"d":"red","e":[1,2,3,4],"f":5}'
+tst4=: '[1,"red",5]'
+tst5=: '[' , tst1 ,',', tst2 ,',', tst3 ,',', tst4 , ']' 
 
+load 'convert/json validate'
+isObject=: # *./&(2&=) #@$
+isRed=: (<'red')&e.
+isNumeric=: 3!:0 e. 1 4 8 16 64 128"_
+isBoxed=: 32 = 3!:0
+ 
 Note 'fiddle'
 isObject (0 ; 1 0) {:: dec_json input
 isRed (0 ; 1 0) {:: dec_json input
 )
 
+SUM=: 0 
 
-getNums=: 3 :0
-
+sumNonRedNums=: 3 :0
 for_item. y do.
-  if. (isObject *. -.@isRed) item do.
-    
+  item=. > item
+  if. isObject item do.
+    props=. {: item
+    if. -.@isRed props do.
+      SUM=: SUM + +/ ; (#~ isNumeric&>) props
+    else. empty'' continue.
+    end.
+  else.
+    props=. item
+    SUM=: SUM + +/@;@(#~ isNumeric&>) props
   end.
+  sumNonRedNums (#~ isBoxed&>) props
 end.
 )
+
+sumNonRedNums dec_json input
+
+echo 'Day12 Part2: ',": SUM

@@ -51,9 +51,9 @@ applyActions=: 4 :0
 )
 
 Lights=: 1000 1000 $ 0
-Instructions=: parseInstructs freads '/home/rishe0/AdventOfCode/advent6_input.txt'
+Instructions=: parseInstructs freads '~Proj/adventofcode/advent6_input.txt'
 Lights=: Instructions applyActions Lights
-echo answer1 =: +/ , Lights
+echo 'Day6 Part1: ',": +/ , Lights
 
 Note 'Part 2'
 You just finish implementing your winning light pattern when you realize 
@@ -86,4 +86,4 @@ toggle=: (2 + getIdx@[ { ])`(getIdx@[)`]}
 
 Lights=: 1000 1000 $ 0
 Lights=: Instructions applyActions Lights
-echo +/ , Lights
+echo 'Day6 Part2: ',": +/ , Lights

@@ -12,7 +12,7 @@ For example:
     ^v^v^v^v^v delivers a bunch of presents to some very lucky children at only 2 houses.
 )
 
-Directions=: LF -.~ freads '/home/rishe0/AdventOfCode/advent3_input.txt'
+Directions=: LF -.~ freads '~Proj/adventofcode/advent3_input.txt'
 NB. echo # ~. +/\ 0 0 , (1 0 , _1 0 , 0 _1,: 0 1) {~ '^v<>' i. directions
 
 Moves=: 1 0 , _1 0 , 0 _1 ,: 0 1
@@ -20,7 +20,7 @@ getMoves=: Moves {~ '^v<>'&i.
 travel=: +/\@(0 0 , ])
 getLocs=: travel@getMoves
 nUniqLocs=: #@~.@getLocs
-echo Answer1=: nUniqLocs Directions
+echo 'Day3 Part1: ', ": nUniqLocs Directions
 
 Note 'Part 2'
 The next year, to speed up the process, Santa creates a robot version of himself, Robo-Santa, to deliver presents with him.
@@ -41,4 +41,4 @@ NB. echo # ~. ({:"2 ,&([: +/\ 0 0&,) {."2) _2]\  (1 0 , _1 0 , 0 _1,: 0 1) {~ '^
 getBothLocs=: ({:"2 ,&travel {."2)@(_2 ]\ getMoves)
 nUniqLocs2=: #@~.@getBothLocs 
 
-echo Answer2=: nUniqLocs2 Directions
+echo 'Day3 Part2: ', ": nUniqLocs2 Directions

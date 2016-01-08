@@ -15,12 +15,12 @@ Filling all containers entirely, how many different combinations of containers c
 fit all 150 liters of eggnog?
 )
 
-input=: _99 ". ];._2 freads '~temp/advent17_input.txt'
+input=: _99 ". ];._2 freads '~Proj/adventofcode/advent17_input.txt'
 
 require 'stats'
 allidx=: 4 5 6 7 8 <@comb"0 ] 20  NB. by inspection have to be more than 3 and less than 9 containers
 
-echo +/ 150 = ; allidx ([: +/"1 {)&.> <input
+echo 'Day17 Part1: ',":  +/ 150 = ; allidx ([: +/"1 {)&.> <input
 
 Note 'Part 2'
 While playing with all the containers in the kitchen, another load of eggnog arrives! The 
@@ -34,4 +34,4 @@ In the example above, the minimum number of containers was two. There were three
 use that many containers, and so the answer there would be 3.
 )
 
-{. 0 -.~ ([: +/ 150&=)&> allidx ([: +/"1 {)&.> <input
+echo 'Day17 Part2: ',":  {. 0 -.~ ([: +/ 150&=)&> allidx ([: +/"1 {)&.> <input

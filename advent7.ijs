@@ -1,5 +1,7 @@
 Note 'Day7, Part 1'
-This year, Santa brought little Bobby Tables a set of wires and bitwise logic gates! Unfortunately, little Bobby is a little under the recommended age range, and he needs help assembling the circuit.
+This year, Santa brought little Bobby Tables a set of wires and bitwise logic 
+gates! Unfortunately, little Bobby is a little under the recommended age range, 
+and he needs help assembling the circuit.
 
 Each wire has an identifier (some lowercase letters) and can carry a 16-bit 
 signal (a number from 0 to 65535). A signal is provided to each wire by a 
@@ -56,7 +58,6 @@ LSHIFT=: (2^16) | (34 b.)~
 AND=: (2^16) | 17 b.
 OR=: (2^16) | 23 b.
 NOT=: (2^16) | 26 b.
-NB. 
 
 NB. need to sort instructions to make sure dependent lines are after starting ones
 getIds=: [: ({: , }:)@;:;._2 ('ANDLRSHIFT->O1234567890') -.~ ]
@@ -66,10 +67,10 @@ sortPed=: \: getGen
 
 getCmds=: <@([: '=. '&joinstring [: |. ' -> '&splitstring);._2
 
-input=: freads '~temp/advent7_input.txt'
+input=: freads '~Proj/adventofcode/advent7_input.txt'
 runCircuit=: 3 : ((getCmds sortPed ]) input)
 
-echo runCircuit ''
+echo 'Day7 Part1: ',": runCircuit ''
 
 Note 'Part 2'
 Now, take the signal you got on wire a, override wire b to that 
@@ -79,5 +80,5 @@ signal is ultimately provided to wire a?
 
 runCircuit2=: 3 : (('a=. y';'b=. a') ,}. ((getCmds sortPed ]) input))
 
-echo runCircuit2^:2  ] 19138
+echo 'Day7 Part1: ',": runCircuit2^:2  ] 19138
 

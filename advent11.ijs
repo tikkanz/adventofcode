@@ -63,10 +63,10 @@ nextPassword=: (>:^:([: -.@validPassword antibase26)^:(_))&.(getPassword^:_1)
 tst=: 'abcdefgh'
 input=: 'vzbxkghb'
 
-echo nextPassword input
+echo 'Day11 Part1: ',": nextPassword input
 
 Note 'Part 2'
 Santa's password expired again. What's the next one?
 )
 
-echo nextPassword >:&.(getPassword^:_1) nextPassword input
+echo 'Day11 Part2: ',": nextPassword >:&.(getPassword^:_1) nextPassword input

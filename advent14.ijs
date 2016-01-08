@@ -27,11 +27,11 @@ Given the descriptions of each reindeer (in your puzzle input), after exactly
 )
 
 tst=: 10 127 14 0 ,: 11 162 16 0
-input=: freads '~temp/advent14_input.txt'
+input=: freads '~Proj/adventofcode/advent14_input.txt'
 parseInput=: 0 ,.~ 1 2 0 {"1 (_99) -."1~  _99 ". ];._2
 progress=: ($ 2&{. # 2&}.)"1
 leader=: >./@(+/)
-echo leader 2503 |:@:progress parseInput input
+echo 'Day14 Part1: ',": leader 2503 |:@:progress parseInput input
 
 Note 'Part 2'
 Seeing how reindeer move in bursts, Santa decides he's not pleased with the old 
@@ -57,4 +57,4 @@ exactly 2503 seconds, how many points does the winning reindeer have?
 )
 
 runningPoints=: [: (e. >./)"1 +/\ 
-echo leader runningPoints 2503 |:@:progress parseInput input
+echo 'Day14 Part2: ',": leader runningPoints 2503 |:@:progress parseInput input

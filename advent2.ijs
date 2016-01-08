@@ -13,7 +13,7 @@ All numbers in the elves' list are in feet. How many total square feet of wrappi
 )
 
 require 'tables/csv stats'
-parcels=: _99 ". > 'x' readdsv jpath '~temp/aoc_day2_inp.txt'
+parcels=: _99 ". > 'x' readdsv jpath '~Proj/adventofcode/advent2_input.txt'
 
 NB. +/ (<./ + +/@:+:)"1 */"1 (0 1 , 1 2 ,: 0 2) {"_ 1 parcels
 
@@ -21,7 +21,7 @@ getFaceSides=: (2 comb 3) {"_ 1 ]
 calcFaceArea=:  */"1@:getFaceSides
 calcPaper=: (<./ + +/@:+:)"1
 calcTotalPaper=: +/@:calcPaper@calcFaceArea
-echo calcTotalPaper parcels
+echo 'Day2 Part1: ',": calcTotalPaper parcels
 
 Note 'Day2 part 2'
 The elves are also running low on ribbon. Ribbon is all the same width, so they only have to worry about the length they need to order, which they would again like to be exact.
@@ -42,5 +42,4 @@ volume=: */"1
 perimeters=: (+/@:+:)"1@getFaceSides
 calcRibbonLength=: (volume + <./"1@:perimeters)
 calcTotalRibbonLength=: +/@calcRibbonLength
-echo calcTotalRibbonLength parcels
-
+echo 'Day2 Part2: ',": calcTotalRibbonLength parcels

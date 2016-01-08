@@ -55,10 +55,10 @@ cars: 2
 perfumes: 1
 )
 
-input=: freads '~temp/advent16_input.txt'
+input=: freads '~Proj/adventofcode/advent16_input.txt'
 aunts=: (',' splitstring ':'&takeafter);._2 -.&' ' input
 
-echo 1 + I. *./"1 aunts e."1 target
+echo 'Day16 Part1: ',":  1 + I. *./"1 aunts e."1 target
 
 NB. or using same framework as Part 2
 NB. echo 1 + I. *./"1 tvals =&((_ ~: PropVals) #"1 ]) PropVals
@@ -87,4 +87,4 @@ PropVals=: avals ((i.@# ,&.> ]) aprops)}  _ $~ aunts ,&# target
 NB. Aunt Sue has more cats and trees, fewer pomeranians and goldfish than Target.
 newtvals=: _1 (tprops i. ;:'pomeranians goldfish')} 1 (tprops i. ;:'cats trees')} (0 $~ #) tvals
 
-echo 1 + I. *./"1 newtvals =&((_ ~: PropVals) #"1 ]) * PropVals -"1 tvals
+echo 'Day16 Part2: ',":  1 + I. *./"1 newtvals =&((_ ~: PropVals) #"1 ]) * PropVals -"1 tvals

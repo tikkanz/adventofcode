@@ -46,7 +46,7 @@ Butterscotch: capacity -1, durability -2, flavor 6, texture 3, calories 8
 Cinnamon: capacity 2, durability 3, flavor -2, texture -1, calories 3
 )
 
-input=: freads '~temp/advent15_input.txt'
+input=: freads '~Proj/adventofcode/advent15_input.txt'
 
 parseInput=: _99 -.~"1 (_99) ". [: ];._2 ',' -.~ ]
 Vals=: parseInput tst
@@ -58,7 +58,7 @@ NB. score 40 60 , 44 56 ,: 80 20
 NB. Parts from http://code.jsoftware.com/wiki/Essays/AllPartitions
 Parts=: (1: + - ;@(<@$:"0 >:@i.) ])`(< }. ] ,:@# 1:)@.<:
 allPerms=: i.@!@# A. ]
-echo >./ score ; <@~.@allPerms"1  ] 100 Parts # Vals
+echo 'Day15 Part1: ',":  >./ score ; <@~.@allPerms"1  ] 100 Parts # Vals
 
 Note 'Part 2'
 Your cookie recipe becomes wildly popular! Someone asks if you can make another recipe 
@@ -78,7 +78,7 @@ the highest-scoring cookie you can make with a calorie total of 500?
 cals=: ([ +/ .*"1 {:"1@])&Vals
 NB. cals 40 60 , 44 56 ,: 80 20
 
-echo >./ score  (#~ 500 = cals) ; <@~.@allPerms"1  ] 100 Parts # Vals
+echo 'Day15 Part2: ',":  >./ score  (#~ 500 = cals) ; <@~.@allPerms"1  ] 100 Parts # Vals
 
 
 Note 'wrong track'
