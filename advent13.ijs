@@ -68,7 +68,7 @@ makeValTable=: (_99 ". [: > {:"1) [`(<"1@])`(8 8$0:"_)} ~.@:({."1) i. 2&{."1
 getAllPerms=: (>:@{:@$ (2 <\ $)"1 i.@!@# A. i.@#)
 getVals=: (|:@[ {~ ]) + {~
 
-echo 'Day 13 Part1: ',":  >./ +/"1 (makeValTable getVals [: getAllPerms ~.@:({."1) ) parseInput input
+echo 'Day13 Part1: ',":  >./ +/"1 (makeValTable getVals [: getAllPerms ~.@:({."1) ) parseInput input
 
 
 Note 'Part 2'
@@ -92,4 +92,4 @@ At this point, you should return to your advent calendar and try another puzzle.
 
 
 getAllPerms=: ((2 + {:@$) (2 <\ $)"1 i.@!@# A. i.@>:@#)
-echo 'Day 13 Part2: ',":  >./ +/"1 ( (9 9 {. makeValTable) getVals [: getAllPerms ~.@:({."1) ) parseInput input
+echo 'Day13 Part2: ',":  >./ +/"1 ( (9 9 {. makeValTable) getVals [: getAllPerms ~.@:({."1) ) parseInput input
