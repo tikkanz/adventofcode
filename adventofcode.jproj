@@ -2,15 +2,15 @@ NB. project:
 NB.
 NB. defines list of source files.
 NB. path defaults to project directory.
-advent1.ijs
-advent2.ijs
-advent3.ijs
-advent4.ijs
-advent5.ijs
-advent6.ijs
-advent7.ijs
-advent8.ijs
-advent9.ijs
+advent01.ijs
+advent02.ijs
+advent03.ijs
+advent04.ijs
+advent05.ijs
+advent06.ijs
+advent07.ijs
+advent08.ijs
+advent09.ijs
 advent10.ijs
 advent11.ijs
 advent12.ijs
