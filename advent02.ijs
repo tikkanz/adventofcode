@@ -13,7 +13,7 @@ All numbers in the elves' list are in feet. How many total square feet of wrappi
 )
 
 require 'tables/csv stats'
-parcels=: _99 ". > 'x' readdsv jpath '~Proj/adventofcode/advent2_input.txt'
+parcels=: _99 ". > 'x' readdsv jpath '~Proj/adventofcode/advent02_input.txt'
 
 NB. +/ (<./ + +/@:+:)"1 */"1 (0 1 , 1 2 ,: 0 2) {"_ 1 parcels
 

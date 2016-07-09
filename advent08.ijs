@@ -42,7 +42,7 @@ tst=: <;._2 noun define
 "\x27"
 )
 
-input=: 'b' freads '~Proj/adventofcode/advent8_input.txt'
+input=: 'b' freads '~Proj/adventofcode/advent08_input.txt'
 
 echo 'Day8 Part1: ',": -/ +/ (#, [: # ('\\x[0123456789abcdefg]{2}';'"') rxrplc ('\\"';'"') rxrplc ('\\\\';'"') rxrplc }.@}:)&>  input
 

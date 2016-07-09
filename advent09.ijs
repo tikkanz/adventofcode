@@ -27,7 +27,7 @@ in this example.
 What is the distance of the shortest route?
 )
 
-input=: (0 2 4 { ;:);._2 freads '~Proj/adventofcode/advent9_input.txt'
+input=: (0 2 4 { ;:);._2 freads '~Proj/adventofcode/advent09_input.txt'
 Locs=: ~. , 2{."1 input
 
 Trips=: <"1 Locs i. 2 {."1 input

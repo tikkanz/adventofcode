@@ -28,7 +28,7 @@ hasDouble=: [: +./ 2 =/\ ]
 noBadStrings=: -.@(+./)@((_2 ]\ 'abcdpqxy') +./@E."1 ])
 isNiceString=: noBadStrings *. hasDouble *. has3vowels
 
-input=: 'b' freads '~Proj/adventofcode/advent5_input.txt'
+input=: 'b' freads '~Proj/adventofcode/advent05_input.txt'
 echo 'Day5 Part1: ',": +/ isNiceString &> input
 
 Note 'Part 2'

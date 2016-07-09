@@ -24,7 +24,7 @@ For example:
 To what floor do the instructions take Santa?
 )
 
-input=: LF -.~ freads '~Proj/adventofcode/advent1_input.txt'
+input=: LF -.~ freads '~Proj/adventofcode/advent01_input.txt'
 
 floor=: [: +/@:<: ') ('&i.
 echo 'Day1 Part1:  ',": floor input
