@@ -1,4 +1,4 @@
-Note 'Day 4 Part 1'
+Note 'Day 4, Part 1'
 
 Santa needs help mining some AdventCoins (very similar to bitcoins) to use as gifts
 for all the economically forward-thinking little girls and boys.
@@ -31,10 +31,10 @@ NB. >: ^: (5 testfirst0s 'pqrstuv' makemd5hash ])^:_ ] 1
 NB. >: ^: (5 testfirst0s 'ckczppom' makemd5hash ])^:_ ] 1
 
 findhash=: 4 : '>: ^: (x testfirst0s y makemd5hash ])^:_ ] 1'
-echo 'Day 4 Part 1: ',": 5 findhash input
+echo 'Day04 Part1: ',": 5 findhash input
 
 Note 'Part 2'
 Now find one that starts with six zeroes.
 )
 
-echo 'Day 4 Part 2: ',": 6 findhash input
+echo 'Day04 Part2: ',": 6 findhash input

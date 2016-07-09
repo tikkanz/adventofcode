@@ -1,4 +1,4 @@
-Note 'Day3 Part1'
+Note 'Day 3, Part1'
 Santa is delivering presents to an infinite two-dimensional grid of houses.
 
 He begins by delivering a present to the house at his starting location, and then an elf at the North Pole calls him via radio and tells him where to move next. Moves are always exactly one house to the north (^), south (v), east (>), or west (<). After each move, he delivers another present to the house at his new location.
@@ -20,7 +20,7 @@ getMoves=: Moves {~ '^v<>'&i.
 travel=: +/\@(0 0 , ])
 getLocs=: travel@getMoves
 nUniqLocs=: #@~.@getLocs
-echo 'Day3 Part1: ', ": nUniqLocs Directions
+echo 'Day03 Part1: ', ": nUniqLocs Directions
 
 Note 'Part 2'
 The next year, to speed up the process, Santa creates a robot version of himself, Robo-Santa, to deliver presents with him.
@@ -39,6 +39,6 @@ For example:
 NB. echo # ~. ({:"2 ,&([: +/\ 0 0&,) {."2) _2]\  (1 0 , _1 0 , 0 _1,: 0 1) {~ '^v<>' i. directions
 
 getBothLocs=: ({:"2 ,&travel {."2)@(_2 ]\ getMoves)
-nUniqLocs2=: #@~.@getBothLocs 
+nUniqLocs2=: #@~.@getBothLocs
 
-echo 'Day3 Part2: ', ": nUniqLocs2 Directions
+echo 'Day03 Part2: ', ": nUniqLocs2 Directions

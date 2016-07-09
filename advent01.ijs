@@ -2,15 +2,15 @@ NB. http://adventofcode.com/
 
 NB. Advent of Code Day 1
 
-Note 'Part 1'
-Santa is trying to deliver presents in a large apartment building, but he can't find 
-the right floor - the directions he got are a little confusing. He starts on the 
+Note 'Day 1, Part 1'
+Santa is trying to deliver presents in a large apartment building, but he can't find
+the right floor - the directions he got are a little confusing. He starts on the
 ground floor (floor 0) and then follows the instructions one character at a time.
 
-An opening parenthesis, (, means he should go up one floor, and a closing parenthesis, 
+An opening parenthesis, (, means he should go up one floor, and a closing parenthesis,
 ), means he should go down one floor.
 
-The apartment building is very tall, and the basement is very deep; he will never find 
+The apartment building is very tall, and the basement is very deep; he will never find
 the top or bottom floors.
 
 For example:
@@ -27,11 +27,11 @@ To what floor do the instructions take Santa?
 input=: LF -.~ freads '~Proj/adventofcode/advent01_input.txt'
 
 floor=: [: +/@:<: ') ('&i.
-echo 'Day1 Part1:  ',": floor input
+echo 'Day01 Part1: ',": floor input
 
 Note 'Part 2'
-Now, given the same instructions, find the position of the first character that causes 
-him to enter the basement (floor -1). The first character in the instructions has 
+Now, given the same instructions, find the position of the first character that causes
+him to enter the basement (floor -1). The first character in the instructions has
 position 1, the second character has position 2, and so on.
 
 For example:
@@ -43,4 +43,4 @@ What is the position of the character that causes Santa to first enter the basem
 )
 
 firstBmt=: _1 >:@(= i. 1:) floor\
-echo 'Day1 Part2:  ',": firstBmt input
+echo 'Day01 Part2: ',": firstBmt input
