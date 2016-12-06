@@ -125,7 +125,7 @@ countNbrs=: (] -~ [: count&> getNbrs)@isOn
 isNbrs23=: 2 3 e.~ countNbrs
 isNbrs3=: 3 = countNbrs
 turnOn=: '.#' {~ (isNbrs3 *. -.@isOn) +. (isOn *. isNbrs23)
-NB. echo count@isOn turnOn^:100 {.test
+assert 4 = count@isOn turnOn^:4 {.test
 
 input=: ];._2 freads '~Proj/adventofcode/advent18_input.txt'
 echo 'Day18 Part1: ',":  count@isOn turnOn^:100 input
@@ -235,7 +235,9 @@ test2=: _6]\ ];._2 noun define
 
 Corners=: <"1 ] 0 0 , 0 _1 , _1 0 ,: _1 _1
 isCorner=: 1&([`(Corners"_)`((0 $~ $)@])})
-turnonCorner=: '.#' {~ isCorner +. isOn
+turnOnCorner=: '.#' {~ isCorner +. isOn
 turnOn=: '.#' {~ isCorner +. (isNbrs3 *. -.@isOn) +. (isOn *. isNbrs23)
+
+assert 17 = count@isOn turnOn^:5 turnOnCorner {.test
 
 echo 'Day18 Part2: ',":  count@isOn turnOn^:100 turnOnCorner input
