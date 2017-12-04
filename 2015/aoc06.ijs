@@ -51,7 +51,7 @@ applyActions=: 4 :0
 )
 
 Lights=: 1000 1000 $ 0
-Instructions=: parseInstructs freads '~Proj/adventofcode/advent06_input.txt'
+Instructions=: parseInstructs freads '~AoC/2015/aoc06_input.txt'
 Lights=: Instructions applyActions Lights
 echo 'Day06 Part1: ',": +/ , Lights
 

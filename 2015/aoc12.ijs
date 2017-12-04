@@ -20,7 +20,7 @@ You will not encounter any strings containing numbers.
 What is the sum of all numbers in the document?
 )
 
-input=: }: freads '~Proj/adventofcode/advent12_input.txt'
+input=: }: freads '~AoC/2015/aoc12_input.txt'
 echo 'Day12 Part1: ',":  +/ _99 ". ', ' rplc~ '[]{}"abcdefghijklmnopqrstuvwxyz:' -.~ input
 
 Note 'Part 2'

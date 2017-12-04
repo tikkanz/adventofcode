@@ -27,7 +27,7 @@ Given the descriptions of each reindeer (in your puzzle input), after exactly
 )
 
 tst=: 10 127 14 0 ,: 11 162 16 0
-input=: freads '~Proj/adventofcode/advent14_input.txt'
+input=: freads '~AoC/2015/aoc14_input.txt'
 parseInput=: 0 ,.~ 1 2 0 {"1 (_99) -."1~  _99 ". ];._2
 progress=: ($ 2&{. # 2&}.)"1
 leader=: >./@(+/)

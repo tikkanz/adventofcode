@@ -12,7 +12,7 @@ For example:
     ^v^v^v^v^v delivers a bunch of presents to some very lucky children at only 2 houses.
 )
 
-Directions=: LF -.~ freads '~Proj/adventofcode/advent03_input.txt'
+Directions=: LF -.~ freads '~AoC/2015/aoc03_input.txt'
 NB. echo # ~. +/\ 0 0 , (1 0 , _1 0 , 0 _1,: 0 1) {~ '^v<>' i. directions
 
 Moves=: 1 0 , _1 0 , 0 _1 ,: 0 1

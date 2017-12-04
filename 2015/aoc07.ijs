@@ -67,7 +67,7 @@ sortPed=: \: getGen
 
 getCmds=: <@([: '=. '&joinstring [: |. ' -> '&splitstring);._2
 
-input=: freads '~Proj/adventofcode/advent07_input.txt'
+input=: freads '~AoC/2015/aoc07_input.txt'
 runCircuit=: 3 : ((getCmds sortPed ]) input)
 
 echo 'Day07 Part1: ',": runCircuit ''

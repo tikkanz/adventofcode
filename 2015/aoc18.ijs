@@ -127,7 +127,7 @@ isNbrs3=: 3 = countNbrs
 turnOn=: '.#' {~ (isNbrs3 *. -.@isOn) +. (isOn *. isNbrs23)
 assert 4 = count@isOn turnOn^:4 {.test
 
-input=: ];._2 freads '~Proj/adventofcode/advent18_input.txt'
+input=: ];._2 freads '~AoC/2015/aoc18_input.txt'
 echo 'Day18 Part1: ',":  count@isOn turnOn^:100 input
 
 NB. Your puzzle answer was 1061.

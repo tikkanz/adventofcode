@@ -46,7 +46,7 @@ Butterscotch: capacity -1, durability -2, flavor 6, texture 3, calories 8
 Cinnamon: capacity 2, durability 3, flavor -2, texture -1, calories 3
 )
 
-input=: freads '~Proj/adventofcode/advent15_input.txt'
+input=: freads '~AoC/2015/aoc15_input.txt'
 
 parseInput=: _99 -.~"1 (_99) ". [: ];._2 ',' -.~ ]
 Vals=: parseInput tst

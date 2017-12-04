@@ -62,7 +62,7 @@ David would lose 7 happiness units by sitting next to Bob.
 David would gain 41 happiness units by sitting next to Carol.
 )
 
-input=: freads '~Proj/adventofcode/advent13_input.txt'
+input=: freads '~AoC/2015/aoc13_input.txt'
 parseInput=: 0 9 2 {"1 [: ;:;._2  rplc&('.';'';'gain ';'';'lose ';'_')
 makeValTable=: (_99 ". [: > {:"1) [`(<"1@])`(8 8$0:"_)} ~.@:({."1) i. 2&{."1
 getAllPerms=: (>:@{:@$ (2 <\ $)"1 i.@!@# A. i.@#)

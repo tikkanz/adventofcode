@@ -1,0 +1,29 @@
+NB. project:
+NB.
+NB. defines list of source files.
+NB. path defaults to project directory.
+aoc01.ijs
+aoc02.ijs
+aoc03.ijs
+aoc04.ijs
+aoc05.ijs
+aoc06.ijs
+aoc07.ijs
+aoc08.ijs
+aoc09.ijs
+aoc10.ijs
+aoc11.ijs
+aoc12.ijs
+aoc13.ijs
+aoc14.ijs
+aoc15.ijs
+aoc16.ijs
+aoc17.ijs
+aoc18.ijs
+aoc19.ijs
+aoc20.ijs
+aoc21.ijs
+aoc22.ijs
+aoc23.ijs
+aoc24.ijs
+aoc25.ijs

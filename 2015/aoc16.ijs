@@ -55,7 +55,7 @@ cars: 2
 perfumes: 1
 )
 
-input=: freads '~Proj/adventofcode/advent16_input.txt'
+input=: freads '~AoC/2015/aoc16_input.txt'
 aunts=: (',' splitstring ':'&takeafter);._2 -.&' ' input
 
 echo 'Day16 Part1: ',":  1 + I. *./"1 aunts e."1 target

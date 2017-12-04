@@ -15,7 +15,7 @@ Filling all containers entirely, how many different combinations of containers c
 fit all 150 liters of eggnog?
 )
 
-input=: _99 ". ];._2 freads '~Proj/adventofcode/advent17_input.txt'
+input=: _99 ". ];._2 freads '~AoC/2015/aoc17_input.txt'
 
 require 'stats'
 allidx=: 4 5 6 7 8 <@comb"0 ] 20  NB. by inspection have to be more than 3 and less than 9 containers
