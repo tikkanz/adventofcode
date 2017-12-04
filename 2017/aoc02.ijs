@@ -55,5 +55,5 @@ calcChecksum=: [: +/@, (%/~ * ~:/~ *. [: (= <.) %/~)&>
 
 assert TestSoln -: calcChecksum Test
 
-echo 'Day 1 Part 2:'
+echo 'Day 2 Part 2:'
 echo calcChecksum MyInput
