@@ -47,3 +47,4 @@ What is the first value written that is larger than your puzzle input?
 echo 'Day 3 Part 2:'
 echo 'Look up OEIS for Sequence 1 1 2 4 5 10 11 23 25 26 54 57'
 echo 'Answer is in table https://oeis.org/A141481/b141481.txt'
+echo 330785
