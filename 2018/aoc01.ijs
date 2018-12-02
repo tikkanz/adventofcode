@@ -1,4 +1,4 @@
-Note 'Day 1, Part 1'
+Note 'Day 1: Chronal Calibration'
 After feeling like you've been falling for a few minutes, you look at the device's tiny screen. 
 "Error: Device must be calibrated before first use. Frequency drift detected. Cannot maintain 
 destination lock." Below the message, the device shows a sequence of changes in frequency (your puzzle input). 
