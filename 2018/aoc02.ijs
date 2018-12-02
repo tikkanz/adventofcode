@@ -78,7 +78,11 @@ above, this is found by removing the differing character from
 either ID, producing fgij.)
 )
 
-lettersInCommon=: [: ({. #~ =/) ] #~ [: +./"1 [: (1 = +/"1)"2  (~:"1"1 _)~
+lettersInCommon=: ({. #~ =/)@(#~ [: +./ (1 = +/@:~:)"1"1 _~)
+
+maskDifferByOne=: [: +./ (1 = +/@:~:)"1"1 _~
+keepSame=: {. #~ =/
+lettersInCommon=: keepSame@(#~ maskDifferByOne)
 
 test_inputs=: ];._2 noun define
 abcde
