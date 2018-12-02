@@ -24,12 +24,14 @@ Here are other example situations:
 Starting with a frequency of zero, what is the resulting frequency after all of the changes in 
 frequency have been applied?
 )
-test_inputs=: 1 1 1 ;  1 1 _2 ; _1 _2 _3
-assert 3 0 _6 = +/&> test_inputs 
-
 load 'format/printf'
-input=: 0 ". > <;._2 freads '2018/aoc01_input.txt'
+
 lastFreq=: +/
+
+test_inputs=: 1 1 1 ;  1 1 _2 ; _1 _2 _3
+assert 3 0 _6 = lastFreq&> test_inputs 
+
+input=: 0 ". > <;._2 freads '2018/aoc01_input.txt'
 'Day 1, Part 1 answer: %d' printf lastFreq input
 
 Note 'Day 1, Part 2'
@@ -60,22 +62,23 @@ Here are other examples:
 What is the first frequency your device reaches twice?
 )
 
+getFirstRepeatFreq=: [: {.@(#~ -.@~:)@(0 , +/\) ,~^:((0 -.@e. ~:)@(0 , +/\))^:_
+
 test_inputs=: 1 _2 3 1 ; 1 _1 ; 3 3 4 _2 _4 ; _6 3 8 5 _6 ; 7 7 _2 _7 _4
 assert 2 0 10 5 14 = getFirstRepeatFreq&> test_inputs
 
-getFirstRepeatFreq=: [: {.@(#~ -.@~:)@(0 , +/\) ,~^:((0 -.@e. ~:)@(0 , +/\))^:_
 'Day 1, Part 2 answer: %d' printf getFirstRepeatFreq input
 
 NB. Developing a more "readable" version
-freqs=: 0 , +/\
-noRepeat=: 0 -.@e. ~:
-firstRepeat=: {.@(#~ -.@~:)
+freqs=: 0 , +/\              NB. need to pre-pend starting freq to running sum
+noRepeat=: 0 -.@e. ~:        NB. returns true if no repeating value
+firstRepeat=: {.@(#~ -.@~:)  NB. returns the first repeated value
 
 getFirstRepeatFreq=: firstRepeat@freqs ,~^:(noRepeat@freqs)^:_ input
 
 NB. Taking it further ...
 while=: 2 :'u ^: v ^:_'
-extend=: ,~
+extend=: ,~                  NB. input grows exponentially
 noRepeatFreq=: noRepeat@freqs
 firstRepeatFreq=: firstRepeat@freqs
 
