@@ -73,8 +73,8 @@ assert test_outputs = getFirstRepeatFreq&> test_inputs
 
 NB. Developing a more "readable" version
 freqs=: 0 , +/\              NB. need to pre-pend starting freq to running sum
-noRepeat=: 0 -.@e. ~:        NB. returns true if no repeating value
-firstRepeat=: {.@(#~ -.@~:)  NB. returns the first repeated value
+noRepeat=: 0 -.@e. ~:        NB. returns 1 (true) if no repeating value
+firstRepeat=: {.^:#@(#~ -.@~:)  NB. returns the first repeated value
 
 getFirstRepeatFreq=: firstRepeat@freqs ,~^:(noRepeat@freqs)^:_ input
 
