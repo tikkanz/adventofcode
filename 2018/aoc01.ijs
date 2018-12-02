@@ -87,7 +87,9 @@ firstRepeatFreq=: firstRepeat@freqs
 getFirstRepeatFreq=: firstRepeatFreq@(extend while noRepeatFreq)
 
 NB. using more efficient algorithm
-getFirstRepeatFreq=: 3 :0
+NB. first repeat has to be one of the first set of freqs
+NB. sets of freqs after the first are offset by multiples of the answeer to part 1
+getFirstRepeatFreq=: verb define
   fqs=. +/\ y
   diff=. {: fqs
   t=. 1
