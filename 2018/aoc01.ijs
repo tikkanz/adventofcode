@@ -85,3 +85,14 @@ noRepeatFreq=: noRepeat@freqs
 firstRepeatFreq=: firstRepeat@freqs
 
 getFirstRepeatFreq=: firstRepeatFreq@(extend while noRepeatFreq)
+
+NB. using more efficient algorithm
+getFirstRepeatFreq=: 3 :0
+  fqs=. +/\ y
+  diff=. {: fqs
+  t=. 1
+  while. 1 > # res=. firstRepeat 0 , fqs ([ , +) diff * t
+    do. t=. t+1
+  end.
+  res
+)
