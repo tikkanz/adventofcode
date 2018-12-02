@@ -28,10 +28,10 @@ load 'format/printf'
 
 lastFreq=: +/
 
-test_inputs=: 1 1 1 ;  1 1 _2 ; _1 _2 _3
-assert 3 0 _6 = lastFreq&> test_inputs 
+test_inputs=: 1 _2 3 1 ; 1 1 1 ;  1 1 _2 ; _1 _2 _3
+assert 3 3 0 _6 = lastFreq&> test_inputs 
 
-input=: 0 ". > <;._2 freads '2018/aoc01_input.txt'
+input=: 0 ". ];._2 freads '2018/aoc01_input.txt'
 'Day 1, Part 1 answer: %d' printf lastFreq input
 
 Note 'Day 1, Part 2'
