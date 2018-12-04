@@ -145,7 +145,7 @@ getGuardMin_s2=: verb define
   min * id
 )
 
-NB. test_inputs=: ] NB. same as part 1
+test_inputs=: test_inputs  NB. same as part 1
 test_outputs=: 4455
 assert test_outputs = getGuardMin_s2 test_inputs
 

@@ -93,7 +93,7 @@ getClaimMsk=: (makeMatrix noOverlap@{~ getIndicies"1)@parseClaims
 getClaimIDs=: {."1@parseClaims
 getnoOverlapClaim=: getClaimMsk # getClaimIDs
 
-test_inputs=: 'blah_in'
+test_inputs=: test_inputs  NB. same as for part 1
 test_outputs=: 3
 assert test_outputs = getnoOverlapClaim test_inputs
 
