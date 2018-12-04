@@ -57,10 +57,10 @@ How many square inches of fabric are within two or more claims?
 )
 load 'format/printf'
 
-parseClaims=: _4 ({."1) _99 ". [: ];._2 '# @ , ; x : '&charsub
-overlapClaims=: +/@,@(1 < [: +/ (-@(0 1&{) |. 1000 1000 {. 1 $~ 2 3&{)"1)
-
-+/, 1 < +/ (-@(0 1&{) |. 1000 1000 {. 1 $~ 2 3&{)"1
+parseClaims=: _99 ". [: ];._2 '# @ , ; x : '&charsub
+putClaim=: -@(1 2&{) |. 1000 1000 {. 1 $~ 3 4&{
+makeMatrix=: [: +/ putClaim"1
+overlapClaims=: +/@,@(1 < makeMatrix)
 
 test_inputs=: noun define
 #1 @ 1,3: 4x4
