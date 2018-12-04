@@ -77,12 +77,24 @@ input=:  freads '2018/aoc03_input.txt'
 
 
 Note 'Day 3, Part 2'
+Amidst the chaos, you notice that exactly one claim doesn't overlap by even a 
+single square inch of fabric with any other claim. If you can somehow draw 
+attention to it, maybe the Elves will be able to make Santa's suit after all!
+
+For example, in the claims above, only claim 3 is intact after all claims are made.
+
+What is the ID of the only claim that doesn't overlap?
 )
 
-<ansVerb2>=: ]
+getIndicies=: <@(1 2&{ (+&.> i.&.>) 3 4&{)
+noOverlap=: *./@([: , 1 = ])
+
+getClaimMsk=: (makeMatrix noOverlap@{~ getIndicies"1)@parseClaims
+getClaimIDs=: {."1@parseClaims
+getnoOverlapClaim=: getClaimMsk # getClaimIDs
 
 test_inputs=: 'blah_in'
-test_outputs=: 'blah_out'
-assert test_outputs = <ansVerb2>&> test_inputs
+test_outputs=: 3
+assert test_outputs = getnoOverlapClaim test_inputs
 
-'Day 3, Part 2 answer: %d' printf <ansVerb2> input
+'Day 3, Part 2 answer: %d' printf getnoOverlapClaim input
