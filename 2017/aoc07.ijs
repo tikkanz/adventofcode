@@ -99,3 +99,44 @@ assert TestSoln -: findBottom Test
 
 echo 'Day 7 Part 2:'
 echo findBottom MyInput
+
+depSort=: monad define
+  parsed=. <@;:;._2 y
+  names=. {.&>parsed
+  depends=. (-.L:0"_1 #,.i.@#) names i.L:1 parsed
+  depends=. (~.@,&.> ;@:{L:0 1~)^:_ depends
+  assert.-.1 e. (i.@# e.S:0"0 ])depends
+  (-.&names ~.;parsed),names /: #@> depends
+)
+
+dependencies=: noun define
+  des_system_lib   std synopsys std_cell_lib des_system_lib dw02 dw01 ramlib ieee
+  dw01             ieee dw01 dware gtech
+  dw02             ieee dw02 dware
+  dw03             std synopsys dware dw03 dw02 dw01 ieee gtech
+  dw04             dw04 ieee dw01 dware gtech
+  dw05             dw05 ieee dware
+  dw06             dw06 ieee dware
+  dw07             ieee dware
+  dware            ieee dware
+  gtech            ieee gtech
+  ramlib           std ieee
+  std_cell_lib     ieee std_cell_lib
+  synopsys 
+)
+
+
+testdata=: 3 : 0
+ m =: _1+2^y
+ v =: m ?@$ 20
+ pa=: _1 p: i.m
+ pb=: 0,2#i.<.m%2                           NB. complete binary tree
+ pc=: 0>.<:i.m                              NB. tall skinny tree
+ pd=: m ($,) (c*i.c) ([,.+/) i.<:c=. <.%:m  NB. forest
+ i.0 0
+)
+
+am   =: i.@,~@# e. # #. ] ,. i.@#
+rc   =: +. =@i.@#
+tc   =: +./ .*.~^:(2>.@^.#)
+tsum_mat=: tc@rc@am@] +/ .* [
